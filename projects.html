@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandbox - Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">📦 DeployBox</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Dashboard</a></li>
+            <li class="active"><a href="projects.html">Projects</a></li>
+            <li><a href="logs.html">Build Logs</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="support.html">Docs & Support</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <h1>Your Sandbox Applications</h1>
+        <p class="subtitle">Spin up or manage distinct environments.</p>
+
+        <div class="grid">
+            <div class="card">
+                <h3>production-api-mock</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Branch: main | Updated 2h ago</p>
+                <span class="btn btn-success" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Active</span>
+            </div>
+            <div class="card">
+                <h3>frontend-testing-stg</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Branch: dev | Updated 1d ago</p>
+                <button class="btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Launch</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Deploy a New Repository App</h3>
+            <div class="form-group" style="margin-top: 1rem;">
+                <label>GitHub Repository URL</label>
+                <input type="text" class="form-control" placeholder="https://github.com/username/repo">
+            </div>
+            <button class="btn">Link & Provision Sandbox</button>
+        </div>
+    </main>
+</body>
+</html>
