@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandbox - Build Logs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">📦 DeployBox</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li class="active"><a href="logs.html">Build Logs</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="support.html">Docs & Support</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <h1>Live Build Console</h1>
+        <p class="subtitle">Inspect standard output logs directly from the compilation layer.</p>
+
+        <div class="card">
+            <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3>Log Stream: frontend-testing-stg</h3>
+                <button class="btn" id="streamBtn" style="padding: 0.5rem 1rem;">Simulate Active Log Feed</button>
+            </div>
+            <div class="terminal" id="logBox" style="min-height: 300px;">
+[10:24:02] Initializing build environment setup...
+[10:24:05] Pulling Docker base image node:18-alpine...
+[10:24:10] Running pipeline: npm install
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('streamBtn').addEventListener('click', () => {
+            const logBox = document.getElementById('logBox');
+            const newLogs = [
+                "\n[10:24:15] Audited 452 packages in 4.82s",
+                "\n[10:24:18] Running pipeline: npm run build",
+                "\n[10:24:22] Production build artifacts generated successfully.",
+                "\n[10:24:23] Setup complete. Container running on port 8080."
+            ];
+            let i = 0;
+            const interval = setInterval(() => {
+                if(i < newLogs.length) {
+                    logBox.innerText += newLogs[i];
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
