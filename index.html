@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandbox - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">📦 DeployBox</div>
+        <ul class="nav-links">
+            <li class="active"><a href="index.html">Dashboard</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="logs.html">Build Logs</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="support.html">Docs & Support</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <h1>Sandbox Console</h1>
+        <p class="subtitle">Real-time application deployment state.</p>
+
+        <div class="grid">
+            <div class="card">
+                <h3>System Status</h3>
+                <p>Status: <strong style="color: var(--accent-success);">All Systems Operational</strong></p>
+                <p style="margin-top: 0.5rem;">Active Containers: 4 / 5 available</p>
+            </div>
+            <div class="card">
+                <h3>Quick Trigger</h3>
+                <p style="margin-bottom: 1rem; color: var(--text-muted);">Instantly redeploy last active repository build cache.</p>
+                <button class="btn" id="deployBtn">Trigger Manual Deploy</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Recent Deployment Flow</h3>
+            <pre class="terminal" id="dashConsole">> System idle. Awaiting push hook trigger...</pre>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('deployBtn').addEventListener('click', () => {
+            const consoleEl = document.getElementById('dashConsole');
+            consoleEl.innerText = "> Fetching latest Git HEAD...\n> Initializing container execution environmental keys...\n> Success! Deployed globally to test-env.local";
+        });
+    </script>
+</body>
+</html>
