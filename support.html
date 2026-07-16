@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandbox - Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">📦 DeployBox</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="logs.html">Build Logs</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li class="active"><a href="support.html">Docs & Support</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <h1>Documentation & Guides</h1>
+        <p class="subtitle">Quick-start reference materials to configure custom configuration workflows.</p>
+
+        <div class="card" style="margin-bottom: 1.5rem;">
+            <h3>How to use the manual build flow</h3>
+            <p style="line-height: 1.6; color: var(--text-muted); margin-top: 0.5rem;">
+                Go to the **Dashboard** panel, then locate the "Quick Trigger" container block. Click the manual deploy button. The system will look for changes, bundle the app directory setup, and spin up an environment.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Frequently Asked Questions</h3>
+            <h4 style="margin-top: 1rem; margin-bottom: 0.25rem;">Are variables secure?</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Yes, variable structures are stored inside decoupled runtime variables within isolated spaces.</p>
+            
+            <h4 style="margin-bottom: 0.25rem;">How many active sandboxes can I build?</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">The platform supports up to five simultaneous builds by default.</p>
+        </div>
+    </main>
+</body>
+</html>
